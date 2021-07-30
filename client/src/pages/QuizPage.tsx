@@ -1,4 +1,5 @@
 import { Question } from "../components/Question";
+import { useQuestionsQuery } from "../hooks/queries/useQuestionsQuery";
 
 const category = "Science and Nature";
 const question =
@@ -7,6 +8,11 @@ const currentQuestion = 7;
 const totalQuestions = 10;
 
 export const QuizPage = () => {
+  const { questionsData, isLoadingQuestions, hasQuestionsError } =
+    useQuestionsQuery();
+
+  console.log(questionsData);
+
   return (
     <main className="bg-gray-100 h-screen flex justify-center items-center">
       <Question
