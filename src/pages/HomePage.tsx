@@ -5,12 +5,8 @@ export const HomePage = () => {
   return (
     <main className="bg-gray-100 h-screen flex justify-center items-center">
       <section className="p-12 container text-center">
-        <h2 className="text-indigo-500 text-xl font-bold">
-          Can you score 100%?
-        </h2>
-
-        <h1 className="pt-6 pb-8 tracking-wide font-extrabold text-4xl md:text-5xl">
-          Welcome to the Quiz
+        <h1 className="mb-8 tracking-wide font-extrabold text-4xl md:text-5xl">
+          General Knowledge Quiz
         </h1>
 
         <p className="text-gray-700 text-lg">
