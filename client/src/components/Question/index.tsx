@@ -17,16 +17,8 @@ export const Question = ({
       <p className="text-gray-700">{question}</p>
 
       <div className="flex gap-10 justify-center items-center">
-        <AnswerButton
-          text="True"
-          type="true"
-          onClick={() => submitAnswer("true")}
-        />
-        <AnswerButton
-          text="False"
-          type="false"
-          onClick={() => submitAnswer("false")}
-        />
+        <AnswerButton text="True" type="true" onAnswer={submitAnswer} />
+        <AnswerButton text="False" type="false" onAnswer={submitAnswer} />
       </div>
 
       <CompletedQuestions

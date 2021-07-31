@@ -3,5 +3,5 @@ import type { Answer } from "../../types/answer";
 export interface AnswerButtonProps {
   text: string;
   type: Answer;
-  onClick: () => void;
+  onAnswer: (answer: Answer) => void;
 }
