@@ -1,7 +1,5 @@
 import { createContext, useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useQuestionsQuery } from "../../hooks/queries/useQuestionsQuery";
-import { pagePaths } from "../../constants/pagePaths";
 import type { QuizContextProviderProps, QuizContextValue } from "./types";
 import type { Answer } from "../../types/answer";
 import type { Result } from "../../types/result";
@@ -18,7 +16,7 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
 
   const [results, setResults] = useState<Result[]>([]);
 
-  const history = useHistory();
+  const [hasFinishedQuiz, setHasFinishedQuiz] = useState(false);
 
   const questions = questionsData?.questions ?? [];
 
@@ -33,14 +31,22 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
 
     setResults((previousResults) => [
       ...previousResults,
-      { question: question.question, hasAnsweredCorrectly },
+      {
+        category: question.category,
+        question: question.question,
+        hasAnsweredCorrectly,
+      },
     ]);
 
     setQuestionIndex((previousQuestionIndex) => previousQuestionIndex + 1);
 
-    if (questionIndex + 1 === totalQuestions) {
-      history.push(pagePaths.resultsPage);
+    const hasAnsweredLastQuestion = questionIndex + 1 === totalQuestions;
+
+    if (!hasAnsweredLastQuestion) {
+      return;
     }
+
+    setHasFinishedQuiz(true);
   };
 
   return (
@@ -52,6 +58,7 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
         isLoadingQuestions,
         hasQuestionsError,
         submitAnswer,
+        hasFinishedQuiz,
         results,
       }}
     >

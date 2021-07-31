@@ -1,6 +1,8 @@
+import { pagePaths } from "../constants/pagePaths";
 import { useQuizContext } from "../hooks/context/useQuizContext";
 import { Question } from "../components/Question";
 import { PuffLoader as Loader } from "react-spinners";
+import { Button } from "../components/Button";
 
 export const QuizPage = () => {
   const {
@@ -10,6 +12,7 @@ export const QuizPage = () => {
     isLoadingQuestions,
     hasQuestionsError,
     submitAnswer,
+    hasFinishedQuiz,
   } = useQuizContext();
 
   if (isLoadingQuestions) {
@@ -32,13 +35,25 @@ export const QuizPage = () => {
 
   return (
     <main className="bg-gray-100 min-h-screen flex justify-center items-center">
-      <Question
-        category={question.category}
-        question={question.question}
-        questionIndex={questionIndex}
-        totalQuestions={totalQuestions}
-        submitAnswer={submitAnswer}
-      />
+      {hasFinishedQuiz ? (
+        <article className="bg-white p-12 pb-8 container max-w-md text-center shadow-md rounded-md">
+          <h2 className="mb-6 text-xl font-semibold text-gray-900">Finished</h2>
+
+          <p className="text-gray-700">
+            You have completed all of the questions.
+          </p>
+
+          <Button text="View Results" link={pagePaths.resultsPage} />
+        </article>
+      ) : (
+        <Question
+          category={question.category}
+          question={question.question}
+          questionIndex={questionIndex}
+          totalQuestions={totalQuestions}
+          submitAnswer={submitAnswer}
+        />
+      )}
     </main>
   );
 };

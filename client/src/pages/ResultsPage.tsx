@@ -1,23 +1,26 @@
+import { pagePaths } from "../constants/pagePaths";
 import { useQuizContext } from "../hooks/context/useQuizContext";
+import { getCorrectAnswers } from "../utilities/results";
+import { Results } from "../components/Results";
+import { Button } from "../components/Button";
 
 export const ResultsPage = () => {
-  const { results } = useQuizContext();
+  const { results, totalQuestions } = useQuizContext();
+
+  const correctAnswers = getCorrectAnswers(results);
 
   return (
     <main className="bg-gray-100 min-h-screen flex justify-center items-center">
-      <section className="p-12 container text-center">
-        <h1 className="mb-8 tracking-wide font-extrabold text-4xl md:text-5xl">
-          Results
-        </h1>
+      <section className="bg-white p-10 container max-w-md text-center shadow-md rounded-md">
+        <h1 className="tracking-wide font-extrabold text-3xl">Results</h1>
 
-        <ul>
-          {results.map((result) => (
-            <li key={result.question}>
-              <p>{result.question}</p>
-              <p>{String(result.hasAnsweredCorrectly)}</p>
-            </li>
-          ))}
-        </ul>
+        <p className="text-gray-600 my-6">
+          You scored {correctAnswers} / {totalQuestions}.
+        </p>
+
+        <Results results={results} />
+
+        <Button text="Play Again" link={pagePaths.homePage} />
       </section>
     </main>
   );

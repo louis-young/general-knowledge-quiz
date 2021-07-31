@@ -10,6 +10,7 @@ export interface QuizContextValue {
   isLoadingQuestions: boolean;
   hasQuestionsError: boolean;
   submitAnswer: (answer: Answer) => void;
+  hasFinishedQuiz: boolean;
   results: Result[];
 }
 

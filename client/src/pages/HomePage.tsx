@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { pagePaths } from "../constants/pagePaths";
+import { Button } from "../components/Button";
 
 export const HomePage = () => {
   return (
@@ -13,12 +13,7 @@ export const HomePage = () => {
           You will be presented with 10 true or false questions.
         </p>
 
-        <Link
-          to={pagePaths.quizPage}
-          className="inline-block mt-8 px-8 py-3 font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-indigo-400 to-blue-800 hover:from-indigo-600 hover:to-blue-900"
-        >
-          Start Quiz
-        </Link>
+        <Button text="Start Quiz" link={pagePaths.quizPage} />
       </section>
     </main>
   );
