@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter as Router } from "react-router-dom";
 import { QuizContextProvider } from "./context/quiz";
-import { Application } from "./components/Application";
+import { Routes } from "./routes";
 import "./index.css";
 
 const queryClient = new QueryClient();
@@ -13,7 +13,7 @@ ReactDOM.render(
     <QueryClientProvider client={queryClient}>
       <Router>
         <QuizContextProvider>
-          <Application />
+          <Routes />
         </QuizContextProvider>
       </Router>
     </QueryClientProvider>
