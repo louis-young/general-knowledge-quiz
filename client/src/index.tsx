@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter as Router } from "react-router-dom";
+import { QuizContextProvider } from "./context/quiz";
 import { Application } from "./components/Application";
 import "./index.css";
 
@@ -11,7 +12,9 @@ ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <Router>
-        <Application />
+        <QuizContextProvider>
+          <Application />
+        </QuizContextProvider>
       </Router>
     </QueryClientProvider>
   </React.StrictMode>,

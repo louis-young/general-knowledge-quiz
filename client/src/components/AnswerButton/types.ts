@@ -1,5 +1,7 @@
+import type { Answer } from "../../types/answer";
+
 export interface AnswerButtonProps {
   text: string;
-  type: "true" | "false";
+  type: Answer;
   onClick: () => void;
 }
