@@ -20,16 +20,16 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
 
   const history = useHistory();
 
-  const questions = questionsData?.questions;
+  const questions = questionsData?.questions ?? [];
 
-  const currentQuestion = questions && questions[currentQuestionIndex];
+  const currentQuestion = questions[currentQuestionIndex];
 
-  const totalQuestionCount = questions?.length;
+  const totalQuestionCount = questions.length;
 
   const submitAnswer = (answer: Answer) => {
-    const actualAnswer = currentQuestion.answer;
+    const correctAnswer = currentQuestion.answer;
 
-    const hasAnsweredCorrectly = actualAnswer === answer;
+    const hasAnsweredCorrectly = answer === correctAnswer;
 
     setResults((previousResults) => [
       ...previousResults,
