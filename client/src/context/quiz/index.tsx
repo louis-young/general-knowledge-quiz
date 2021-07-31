@@ -8,15 +8,25 @@ export const QuizContext = createContext<QuizContextValue | undefined>(
   undefined
 );
 
+const initialQuestionIndex = 0;
+const initialResults: [] = [];
+const initialHasFinishedQuiz = false;
+
 export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
-  const { questionsData, isLoadingQuestions, hasQuestionsError } =
-    useQuestionsQuery();
+  const {
+    questionsData,
+    isLoadingQuestions,
+    hasQuestionsError,
+    refetchQuestions,
+  } = useQuestionsQuery();
 
-  const [questionIndex, setQuestionIndex] = useState(0);
+  const [questionIndex, setQuestionIndex] = useState(initialQuestionIndex);
 
-  const [results, setResults] = useState<Result[]>([]);
+  const [results, setResults] = useState<Result[]>(initialResults);
 
-  const [hasFinishedQuiz, setHasFinishedQuiz] = useState(false);
+  const [hasFinishedQuiz, setHasFinishedQuiz] = useState(
+    initialHasFinishedQuiz
+  );
 
   const questions = questionsData?.questions ?? [];
 
@@ -49,6 +59,14 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
     setHasFinishedQuiz(true);
   };
 
+  const reinitialiseQuiz = () => {
+    setQuestionIndex(initialQuestionIndex);
+    setResults(initialResults);
+    setHasFinishedQuiz(initialHasFinishedQuiz);
+
+    refetchQuestions();
+  };
+
   return (
     <QuizContext.Provider
       value={{
@@ -60,6 +78,7 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
         submitAnswer,
         hasFinishedQuiz,
         results,
+        reinitialiseQuiz,
       }}
     >
       {children}

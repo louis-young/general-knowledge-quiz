@@ -11,7 +11,13 @@ export const useQuestionsQuery = () => {
     data: questionsData,
     isLoading: isLoadingQuestions,
     isError: hasQuestionsError,
+    refetch: refetchQuestions,
   } = useQuery(queryKey, () => get(endpoint));
 
-  return { questionsData, isLoadingQuestions, hasQuestionsError };
+  return {
+    questionsData,
+    isLoadingQuestions,
+    hasQuestionsError,
+    refetchQuestions,
+  };
 };

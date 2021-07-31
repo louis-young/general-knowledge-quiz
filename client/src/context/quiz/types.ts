@@ -12,6 +12,7 @@ export interface QuizContextValue {
   submitAnswer: (answer: Answer) => void;
   hasFinishedQuiz: boolean;
   results: Result[];
+  reinitialiseQuiz: () => void;
 }
 
 export interface QuizContextProviderProps {
