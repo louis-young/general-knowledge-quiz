@@ -37,7 +37,9 @@ export const QuizPage = () => {
     <main className="bg-gray-100 min-h-screen flex justify-center items-center">
       {hasFinishedQuiz ? (
         <article className="bg-white p-12 pb-8 container max-w-md text-center shadow-md rounded-md">
-          <h2 className="mb-6 text-xl font-semibold text-gray-900">Finished</h2>
+          <h1 className="mb-6 tracking-wide font-extrabold text-3xl">
+            Finished
+          </h1>
 
           <p className="text-gray-700">
             You have completed all of the questions.

@@ -15,7 +15,7 @@ export const ResultsPage = () => {
         <h1 className="tracking-wide font-extrabold text-3xl">Results</h1>
 
         <p className="text-gray-600 my-6">
-          You scored {correctAnswers} / {totalQuestions}.
+          You got {correctAnswers} questions correct out of {totalQuestions}.
         </p>
 
         <Results results={results} />
