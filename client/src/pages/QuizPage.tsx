@@ -4,9 +4,9 @@ import { PuffLoader as Loader } from "react-spinners";
 
 export const QuizPage = () => {
   const {
-    currentQuestion,
-    currentQuestionIndex,
-    totalQuestionCount,
+    question,
+    questionIndex,
+    totalQuestions,
     isLoadingQuestions,
     hasQuestionsError,
     submitAnswer,
@@ -33,9 +33,10 @@ export const QuizPage = () => {
   return (
     <main className="bg-gray-100 min-h-screen flex justify-center items-center">
       <Question
-        currentQuestion={currentQuestion}
-        currentQuestionIndex={currentQuestionIndex}
-        totalQuestionCount={totalQuestionCount}
+        category={question.category}
+        question={question.question}
+        questionIndex={questionIndex}
+        totalQuestions={totalQuestions}
         submitAnswer={submitAnswer}
       />
     </main>

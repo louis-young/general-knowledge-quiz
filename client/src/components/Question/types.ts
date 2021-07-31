@@ -1,9 +1,9 @@
-import type { Question } from "../../types/question";
 import type { Answer } from "../../types/answer";
 
 export interface QuestionProps {
-  currentQuestion: Question;
-  currentQuestionIndex: number;
-  totalQuestionCount: number;
+  category: string;
+  question: string;
+  questionIndex: number;
+  totalQuestions: number;
   submitAnswer: (answer: Answer) => void;
 }

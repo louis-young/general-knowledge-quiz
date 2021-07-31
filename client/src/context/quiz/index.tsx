@@ -14,7 +14,7 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
   const { questionsData, isLoadingQuestions, hasQuestionsError } =
     useQuestionsQuery();
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [questionIndex, setQuestionIndex] = useState(0);
 
   const [results, setResults] = useState<Result[]>([]);
 
@@ -22,25 +22,23 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
 
   const questions = questionsData?.questions ?? [];
 
-  const currentQuestion = questions[currentQuestionIndex];
+  const question = questions[questionIndex];
 
-  const totalQuestionCount = questions.length;
+  const totalQuestions = questions.length;
 
   const submitAnswer = (answer: Answer) => {
-    const correctAnswer = currentQuestion.answer;
+    const correctAnswer = question.answer;
 
     const hasAnsweredCorrectly = answer === correctAnswer;
 
     setResults((previousResults) => [
       ...previousResults,
-      { question: currentQuestion.question, hasAnsweredCorrectly },
+      { question: question.question, hasAnsweredCorrectly },
     ]);
 
-    setCurrentQuestionIndex(
-      (previousCurrentQuestionIndex) => previousCurrentQuestionIndex + 1
-    );
+    setQuestionIndex((previousQuestionIndex) => previousQuestionIndex + 1);
 
-    if (currentQuestionIndex + 1 === totalQuestionCount) {
+    if (questionIndex + 1 === totalQuestions) {
       history.push(pagePaths.resultsPage);
     }
   };
@@ -48,9 +46,9 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
   return (
     <QuizContext.Provider
       value={{
-        currentQuestion,
-        currentQuestionIndex,
-        totalQuestionCount,
+        question,
+        questionIndex,
+        totalQuestions,
         isLoadingQuestions,
         hasQuestionsError,
         submitAnswer,

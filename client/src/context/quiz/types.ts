@@ -4,9 +4,9 @@ import type { Answer } from "../../types/answer";
 import type { Result } from "../../types/result";
 
 export interface QuizContextValue {
-  currentQuestion: Question;
-  currentQuestionIndex: number;
-  totalQuestionCount: number;
+  question: Question;
+  questionIndex: number;
+  totalQuestions: number;
   isLoadingQuestions: boolean;
   hasQuestionsError: boolean;
   submitAnswer: (answer: Answer) => void;
