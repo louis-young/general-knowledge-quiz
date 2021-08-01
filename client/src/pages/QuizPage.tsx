@@ -42,7 +42,7 @@ export const QuizPage = () => {
           </h1>
 
           <p className="text-gray-700">
-            You have completed all of the questions.
+            You have answered all of the questions.
           </p>
 
           <Button text="View Results" link={pagePaths.resultsPage} />

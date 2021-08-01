@@ -4,11 +4,15 @@ import { useQuizContext } from "../hooks/context/useQuizContext";
 import { Button } from "../components/Button";
 
 export const HomePage = () => {
-  const { reinitialiseQuiz } = useQuizContext();
+  const { hasFinishedQuiz, reinitialiseQuiz } = useQuizContext();
 
   useEffect(() => {
+    if (!hasFinishedQuiz) {
+      return;
+    }
+
     reinitialiseQuiz();
-  }, [reinitialiseQuiz]);
+  }, [hasFinishedQuiz, reinitialiseQuiz]);
 
   return (
     <main className="bg-gray-100 min-h-screen flex justify-center items-center">
