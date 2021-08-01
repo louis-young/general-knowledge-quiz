@@ -1,5 +1,6 @@
 {
   "name": "react-typescript-tailwind",
+  "homepage": "/quiz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
