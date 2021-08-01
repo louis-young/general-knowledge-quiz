@@ -41,9 +41,7 @@ export const QuizPage = () => {
             Finished
           </h1>
 
-          <p className="text-gray-700">
-            You have answered all of the questions.
-          </p>
+          <p className="text-gray-700">You have answered every question.</p>
 
           <Button text="View Results" link={pagePaths.resultsPage} />
         </article>

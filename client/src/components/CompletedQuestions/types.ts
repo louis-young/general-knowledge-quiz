@@ -1,4 +1,4 @@
 export interface CompletedQuestionsProps {
-  currentQuestion: number;
+  question: number;
   totalQuestions: number;
 }

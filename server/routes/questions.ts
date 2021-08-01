@@ -15,9 +15,9 @@ export const questions = app.get("/", async (request, response) => {
     const questions = formatQuestions(unformattedQuestions);
 
     return response.status(200).json({ questions });
-  } catch {
+  } catch (error) {
     return response.status(500).json({
-      error: { message: "Something went wrong. Please try again." },
+      error: { message: error.message },
     });
   }
 });

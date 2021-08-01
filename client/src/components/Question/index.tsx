@@ -16,12 +16,12 @@ export const Question = ({
       <p className="text-gray-700">{question}</p>
 
       <div className="flex gap-10 justify-center items-center">
-        <AnswerButton text="True" type="true" onAnswer={submitAnswer} />
-        <AnswerButton text="False" type="false" onAnswer={submitAnswer} />
+        <AnswerButton text="True" type="true" onClick={submitAnswer} />
+        <AnswerButton text="False" type="false" onClick={submitAnswer} />
       </div>
 
       <CompletedQuestions
-        currentQuestion={questionIndex + 1}
+        question={questionIndex + 1}
         totalQuestions={totalQuestions}
       />
     </article>

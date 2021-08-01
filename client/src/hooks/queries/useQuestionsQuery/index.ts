@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { get } from "../../../api";
 import { getQuestionsQueryKey } from "../../../utilities/queryKeys";
 
-const endpoint = "http://localhost:5000/questions";
+const endpoint = process.env.REACT_APP_API_ENDPOINT_URL as string;
 
 export const useQuestionsQuery = () => {
   const queryKey = getQuestionsQueryKey();

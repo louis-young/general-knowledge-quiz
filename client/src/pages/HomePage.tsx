@@ -7,11 +7,9 @@ export const HomePage = () => {
   const { hasFinishedQuiz, reinitialiseQuiz } = useQuizContext();
 
   useEffect(() => {
-    if (!hasFinishedQuiz) {
-      return;
+    if (hasFinishedQuiz) {
+      reinitialiseQuiz();
     }
-
-    reinitialiseQuiz();
   }, [hasFinishedQuiz, reinitialiseQuiz]);
 
   return (

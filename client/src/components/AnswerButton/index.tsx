@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import type { AnswerButtonProps } from "./types";
 
-export const AnswerButton = ({ text, type, onAnswer }: AnswerButtonProps) => {
+export const AnswerButton = ({ text, type, onClick }: AnswerButtonProps) => {
   const answerButtonClassNames = classNames({
     "inline-block mt-8 px-8 py-3 font-medium rounded-md shadow-sm text-white bg-gradient-to-r":
       true,
@@ -12,7 +12,7 @@ export const AnswerButton = ({ text, type, onAnswer }: AnswerButtonProps) => {
   });
 
   const handleClick = () => {
-    onAnswer(type);
+    onClick(type);
   };
 
   return (

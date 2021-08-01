@@ -52,11 +52,9 @@ export const QuizContextProvider = ({ children }: QuizContextProviderProps) => {
 
     const hasAnsweredLastQuestion = questionIndex + 1 === totalQuestions;
 
-    if (!hasAnsweredLastQuestion) {
-      return;
+    if (hasAnsweredLastQuestion) {
+      setHasFinishedQuiz(true);
     }
-
-    setHasFinishedQuiz(true);
   };
 
   const reinitialiseQuiz = () => {
