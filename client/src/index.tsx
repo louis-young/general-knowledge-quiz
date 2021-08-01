@@ -6,7 +6,13 @@ import { QuizContextProvider } from "./context/quiz";
 import { Routes } from "./routes";
 import "./index.css";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
