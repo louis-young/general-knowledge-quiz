@@ -1,6 +1,6 @@
 # Quiz
 
-A general knowledge quiz application to present true or false questions and display a summary of results, written in React.
+A general knowledge quiz application to present true or false questions and display a summary of results, built with React.
 
 ![Quiz](documentation/quiz.jpg)
 
