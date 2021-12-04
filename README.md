@@ -1,3 +1,5 @@
+⚠️ Please note that this is an old project and does not reflect the quality of my current work.
+
 # General Knowledge Quiz
 
 A general knowledge quiz that presents random true or false questions.
