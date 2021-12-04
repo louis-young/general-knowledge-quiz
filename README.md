@@ -10,7 +10,12 @@ A general knowledge quiz that presents random true or false questions from diffe
 
 The back-end acts as a proxy server that is responsible for making requests to an external API and formatting the response.
 
-Built with React, TypeScript, Node and Express.
+## Technologies
+
+- TypeScript.
+- React.
+- Node.
+- Epxress.
 
 ## Motivation
 
