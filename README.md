@@ -20,8 +20,13 @@ This was a learning project to deepen my understanding of using TypeScript in No
 - React.
 - Tailwind.
 - Node.
+- Open Trivia Database API.
 - Epxress.
 - Tailwind.
+
+---
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Available Scripts
 
