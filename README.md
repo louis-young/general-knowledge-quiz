@@ -18,6 +18,7 @@ This was a learning project to deepen my understanding of using TypeScript in No
 
 - TypeScript.
 - React.
+- Tailwind.
 - Node.
 - Epxress.
 - Tailwind.
