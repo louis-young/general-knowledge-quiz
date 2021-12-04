@@ -16,6 +16,7 @@ The back-end acts as a proxy server that is responsible for making requests to a
 - React.
 - Node.
 - Epxress.
+- Tailwind.
 
 ## Motivation
 
