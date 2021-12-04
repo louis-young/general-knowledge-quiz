@@ -1,16 +1,18 @@
-# Quiz
+# General Knowledge Quiz
 
-A general knowledge quiz application to present true or false questions and display a summary of results, built with React.
+A general knowledge quiz that presents random true or false questions.
 
-![Quiz](documentation/quiz.jpg)
+![General Knowledge Quiz](documentation/general-knowledge-quiz.jpg)
 
 ## Description
 
-This is an application which allows you answer random true or false general knowledge questions from different categories and view a summary of your results.
+A general knowledge quiz that presents random true or false questions from different categories and a summary of your results. 
+
+The back-end acts as a proxy server that is responsible for making requests to an external API and formatting the response.
 
 ## Motivation
 
-I built this application to practice using TypeScript in React and to build a fun application.
+This was a learning project to deepen my understanding of using TypeScript in Node and React.
 
 ### Available Scripts
 
