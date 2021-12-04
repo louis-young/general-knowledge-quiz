@@ -6,7 +6,7 @@ A general knowledge quiz that presents random true or false questions.
 
 ## Description
 
-A general knowledge quiz that presents random true or false questions from different categories and a summary of your results. 
+A general knowledge quiz that presents random true or false questions from different categories and a summary of your results.
 
 The back-end acts as a proxy server that is responsible for making requests to an external API and formatting the response.
 
@@ -21,7 +21,7 @@ This was a learning project to deepen my understanding of using TypeScript in No
 - Tailwind.
 - Node.
 - Open Trivia Database API.
-- Epxress.
+- Express.
 - Tailwind.
 
 ---
